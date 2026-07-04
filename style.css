@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #ecf0f1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#game-wrapper {
+    text-align: center;
+    max-width: 850px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #f1c40f;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#ui-panel {
+    margin-bottom: 10px;
+}
+
+#ui-panel button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #e94560;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.2s;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+#ui-panel button:hover {
+    background: #c73652;
+    transform: translateY(-2px);
+}
+
+#game {
+    display: inline-block;
+    border: 4px solid #e94560;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+}
+
+#game canvas {
+    display: block;
+    border-radius: 4px;
+}
+
+#info-panel {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#score-display { color: #f1c40f; }
+#gold-display { color: #f39c12; }
+#level-display { color: #3498db; }
+#lives-display { color: #e74c3c; }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #16213e, #1a1a2e);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #e94560;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #f1c40f;
+}
+
+.modal-content p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.modal-content button {
+    margin-top: 25px;
+    padding: 12px 35px;
+    font-size: 17px;
+    font-weight: bold;
+    background: #e94560;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background: #c73652;
+}
+
+/* Стили магазина */
+.shop-content {
+    max-width: 600px;
+}
+
+#shop-gold {
+    font-size: 22px !important;
+    color: #f39c12 !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+}
+
+#shop-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.shop-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #34495e;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.shop-item:hover:not(.sold-out) {
+    border-color: #f1c40f;
+    background: rgba(241, 196, 15, 0.1);
+    transform: translateY(-2px);
+}
+
+.shop-item.sold-out {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: #555;
+}
+
+.shop-item .item-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.shop-item .item-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ecf0f1;
+    margin-bottom: 5px;
+}
+
+.shop-item .item-desc {
+    font-size: 12px;
+    color: #bdc3c7;
+    margin-bottom: 8px;
+    text-align: center !important;
+}
+
+.shop-item .item-price {
+    font-size: 14px;
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.shop-item .item-level {
+    font-size: 11px;
+    color: #3498db;
+    margin-top: 4px;
+}
+
+.hidden {
+    display: none !important;
+}
