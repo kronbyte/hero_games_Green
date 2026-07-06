@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подземелье Героя</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-wrapper">
+        <h1>Подземелье Героя</h1>
+
+        <div id="ui-panel">
+            <button id="btn-pause">⏸</button>
+            <button id="btn-shop">🛒 </button>
+            <button id="btn-rules"> Правила</button>
+            <button id="btn-exit">Выход</button>
+        </div>
+
+        <div id="game"></div>
+
+        <div id="info-panel">
+            <span id="score-display">Очки: 0</span>
+            <span id="gold-display">Золото: 0</span>
+            <span id="level-display">Уровень: 1</span>
+            <span id="lives-display">❤️: 3</span>
+        </div>
+    </div>
+    <div id="rules-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>📜 Правила игры</h2>
+            <p> <b>Цель:</b> собирай монеты, избегай врагов!</p>
+            <p><b>Управление:</b> WASD или стрелки</p>
+            <p><b>Монета:</b> +10 очков и +10 золота</p>
+            <p> <b>Зелье:</b> +1 жизнь</p>
+            <p><b>Скелет:</b> медленный, -1 жизнь</p>
+            <p><b>Летучая мышь:</b> быстрая, летает по волне, -1 жизнь</p>
+            <p> <b>Магазин:</b> покупай улучшения за золото</p>
+            <p><b>Уровень:</b> набери 100 очков</p>
+            <button id="btn-close-rules">Понятно!</button>
+        </div>
+    </div>
+
+    <div id="shop-modal" class="modal hidden">
+        <div class="modal-content shop-content">
+            <h2></h2>
+            <p id="shop-gold">Золото: 0</p>
+            <div id="shop-items"></div>
+            <button id="btn-close-shop">Закрыть</button>
+        </div>
+    </div>
+
+    <div id="gameover-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Фиаско</h2>
+            <p id="final-score">Твой счёт: 0</p>
+            <button id="btn-restart"> Заново</button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/kaboom@3000.1.17/dist/kaboom.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/sprites.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html> 
